@@ -35,7 +35,8 @@ import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-bash'
 
 import React from 'react'
-import { useRouter } from 'next/router'
+import NProgress from 'nprogress'
+import Router, { useRouter } from 'next/router'
 import { bootstrap } from 'lib/bootstrap-client'
 import { fathomId, fathomConfig } from 'lib/config'
 import * as Fathom from 'fathom-client'
@@ -43,6 +44,10 @@ import * as Fathom from 'fathom-client'
 if (typeof window !== 'undefined') {
   bootstrap()
 }
+
+Router.events.on('routeChangeStart', () => NProgress.start())
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
