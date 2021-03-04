@@ -78,3 +78,12 @@ body {
 .nprogress-custom-parent #nprogress .bar {
   position: absolute;
 }
+
+.notion-frame {
+  padding: 0px;
+}
+
+.notion-header {
+  background-color: #0000006b;
+  backdrop-filter: blur(10rem);
+}
