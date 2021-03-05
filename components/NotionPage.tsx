@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import cs from 'classnames'
+import AdSense from 'react-adsense'
 import { useRouter } from 'next/router'
 import { useSearchParam } from 'react-use'
 import BodyClassName from 'react-body-classname'
@@ -236,6 +237,16 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageCoverPosition={config.defaultPageCoverPosition}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapNotionImageUrl}
+        pageHeader={
+          <AdSense.Google
+            client='ca-pub-5402646688760293'
+            slot='8783568883'
+            style={{ width: '100%', height: 100, 'margin-bottom': 10 }}
+          />
+        }
+        pageFooter={
+          <AdSense.Google client='ca-pub-5402646688760293' slot='7618962343' />
+        }
       />
 
       <CustomHtml site={site} />
