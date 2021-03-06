@@ -240,12 +240,16 @@ export const NotionPage: React.FC<types.PageProps> = ({
         pageHeader={
           <AdSense.Google
             client='ca-pub-5402646688760293'
-            slot='8783568883'
-            style={{ width: '100%', height: 100, 'margin-bottom': 10 }}
+            slot='7618962343'
+            style={{ width: '100%', height: 100, marginBottom: 10 }}
           />
         }
         pageFooter={
-          <AdSense.Google client='ca-pub-5402646688760293' slot='7618962343' />
+          <AdSense.Google
+            client='ca-pub-5402646688760293'
+            slot='7618962343'
+            style={{ width: '100%', height: 100, marginBottom: 10 }}
+          />
         }
       />
 
