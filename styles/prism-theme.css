@@ -1,136 +1,120 @@
 /**
- * atom-dark theme for `prism.js`
- * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
- * @author Joe Gibson (@gibsjose)
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
-
  code[class*="language-"],
  pre[class*="language-"] {
-   color: #c5c8c6;
-   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-   font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
-   direction: ltr;
+   color: #ABB2BF;
+   background: none;
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
    text-align: left;
    white-space: pre;
    word-spacing: normal;
    word-break: normal;
+   word-wrap: normal;
    line-height: 1.5;
- 
    -moz-tab-size: 4;
    -o-tab-size: 4;
    tab-size: 4;
- 
    -webkit-hyphens: none;
    -moz-hyphens: none;
    -ms-hyphens: none;
    hyphens: none;
  }
  
+ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+   text-shadow: none;
+   background: #383e49;
+ }
+ 
+ pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+ code[class*="language-"]::selection, code[class*="language-"] ::selection {
+   text-shadow: none;
+   background: #9aa2b1;
+ }
+ 
+ @media print {
+   code[class*="language-"],
+   pre[class*="language-"] {
+     text-shadow: none;
+   }
+ }
  /* Code blocks */
  pre[class*="language-"] {
    padding: 1em;
    margin: .5em 0;
    overflow: auto;
-   border-radius: 0.3em;
  }
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-   background: #1d1f21;
+   background: #282c34;
  }
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
    padding: .1em;
    border-radius: .3em;
+   white-space: normal;
  }
  
  .token.comment,
  .token.prolog,
  .token.doctype,
  .token.cdata {
-   color: #7C7C7C;
+   color: #5C6370;
  }
  
  .token.punctuation {
-   color: #c5c8c6;
- }
- 
- .namespace {
-   opacity: .7;
- }
- 
- .token.property,
- .token.keyword,
- .token.tag {
-   color: #96CBFE;
- }
- 
- .token.class-name {
-   color: #FFFFB6;
-   text-decoration: underline;
- }
- 
- .token.boolean,
- .token.constant {
-   color: #99CC99;
- }
- 
- .token.symbol,
- .token.deleted {
-   color: #f92672;
- }
- 
- .token.number {
-   color: #FF73FD;
+   color: #abb2bf;
  }
  
  .token.selector,
+ .token.tag {
+   color: #e06c75;
+ }
+ 
+ .token.property,
+ .token.boolean,
+ .token.number,
+ .token.constant,
+ .token.symbol,
  .token.attr-name,
+ .token.deleted {
+   color: #d19a66;
+ }
+ 
  .token.string,
  .token.char,
+ .token.attr-value,
  .token.builtin,
  .token.inserted {
-   color: #A8FF60;
+   color: #98c379;
  }
  
- .token.variable {
-   color: #C6C5FE;
- }
- 
- .token.operator {
-   color: #EDEDED;
- }
- 
- .token.entity {
-   color: #FFFFB6;
-   cursor: help;
- }
- 
- .token.url {
-   color: #96CBFE;
- }
- 
+ .token.operator,
+ .token.entity,
+ .token.url,
  .language-css .token.string,
  .style .token.string {
-   color: #87C38A;
+   color: #56b6c2;
  }
  
  .token.atrule,
- .token.attr-value {
-   color: #F9EE98;
+ .token.keyword {
+   color: #c678dd;
  }
  
  .token.function {
-   color: #DAD085;
+   color: #61afef;
  }
  
- .token.regex {
-   color: #E9C062;
- }
- 
- .token.important {
-   color: #fd971f;
+ .token.regex,
+ .token.important,
+ .token.variable {
+   color: #c678dd;
  }
  
  .token.important,
@@ -140,5 +124,50 @@
  
  .token.italic {
    font-style: italic;
+ }
+ 
+ .token.entity {
+   cursor: help;
+ }
+ 
+ pre.line-numbers {
+   position: relative;
+   padding-left: 3.8em;
+   counter-reset: linenumber;
+ }
+ 
+ pre.line-numbers > code {
+   position: relative;
+ }
+ 
+ .line-numbers .line-numbers-rows {
+   position: absolute;
+   pointer-events: none;
+   top: 0;
+   font-size: 100%;
+   left: -3.8em;
+   width: 3em; /* works for line-numbers below 1000 lines */
+   letter-spacing: -1px;
+   border-right: 0;
+ 
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+ 
+ }
+ 
+ .line-numbers-rows > span {
+   pointer-events: none;
+   display: block;
+   counter-increment: linenumber;
+ }
+ 
+ .line-numbers-rows > span:before {
+   content: counter(linenumber);
+   color: #5C6370;
+   display: block;
+   padding-right: 0.8em;
+   text-align: right;
  }
  
