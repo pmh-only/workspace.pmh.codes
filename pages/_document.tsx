@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
 
             <Main />
 
+            <script
+              async
+              src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+            ></script>
             <NextScript />
           </body>
         </Html>
