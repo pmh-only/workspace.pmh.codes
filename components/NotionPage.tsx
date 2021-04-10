@@ -237,13 +237,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageCoverPosition={config.defaultPageCoverPosition}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapNotionImageUrl}
-        pageHeader={
-          <AdSense.Google
-            client='ca-pub-5402646688760293'
-            slot='7618962343'
-            style={{ width: '100%', height: 100, marginBottom: 10 }}
-          />
-        }
         pageFooter={
           <AdSense.Google
             client='ca-pub-5402646688760293'
